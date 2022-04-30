@@ -24,8 +24,6 @@ db.connect((err) => {
         const selectSql = "SELECT * FROM siswa ORDER BY id DESC"
         db.query(selectSql, (err, result) => {
             const results = JSON.parse(JSON.stringify(result))
-            // console.log(results)
-            // res.send(results)
             res.render("index", {siswa: results, title: "Data Siswa"})
         })
     })
@@ -45,7 +43,6 @@ db.connect((err) => {
             if (err) throw err
             const siswa = JSON.parse(JSON.stringify(result))
             res.render("edit", {title: "Edit Siswa", siswa})
-            // console.log(siswa);
         })
     })
 
