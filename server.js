@@ -62,8 +62,6 @@ db.connect((err) => {
     app.get("/delete/:id", (req, res) => {
         const deleteSql = `DELETE FROM siswa WHERE id='${req.params.id}'`
         db.query(deleteSql, (err, result) => {
-            // console.log(results)
-            // res.send(results)
             res.redirect("/")
         })
     })
